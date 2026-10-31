@@ -158,6 +158,46 @@ export default function TeamPage() {
                       </ul>
                     </div>
                   </div>
+
+                  {/* Connect Links if available */}
+                  {(member.links.github || member.links.linkedin || member.links.instagram) && (
+                    <div className="pt-4 mt-6 border-t border-[#10243A]/08 flex items-center gap-3">
+                      <span className="text-xs font-bold text-[#10243A]">Connect:</span>
+                      {member.links.github && (
+                        <a
+                          href={member.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full text-[#10243A] hover:text-[#2457D6] hover:bg-black/5 transition-colors"
+                          aria-label={`${member.name} GitHub`}
+                        >
+                          <GithubIcon className="w-5 h-5" />
+                        </a>
+                      )}
+                      {member.links.linkedin && (
+                        <a
+                          href={member.links.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full text-[#10243A] hover:text-[#2457D6] hover:bg-black/5 transition-colors"
+                          aria-label={`${member.name} LinkedIn`}
+                        >
+                          <LinkedinIcon className="w-5 h-5" />
+                        </a>
+                      )}
+                      {member.links.instagram && (
+                        <a
+                          href={member.links.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full text-[#10243A] hover:text-[#2457D6] hover:bg-black/5 transition-colors"
+                          aria-label={`${member.name} Instagram`}
+                        >
+                          <InstagramIcon className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

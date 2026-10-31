@@ -46,6 +46,9 @@ export const teamMembers: TeamMember[] = [
       "Taking ownership of assigned strategy and research responsibilities.",
     ],
     initials: "NS",
-    links: {},
+    links: {
+      github: "https://github.com/Nithiga-hue",
+      linkedin: "https://www.linkedin.com/in/nithiga-sathisbabu-41092637b",
+    },
   },
 ];
