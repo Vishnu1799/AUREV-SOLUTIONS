@@ -32,7 +32,9 @@ export const teamMembers: TeamMember[] = [
       "Taking ownership of assigned innovation and development responsibilities.",
     ],
     initials: "SA",
-    links: {},
+    links: {
+      linkedin: "https://www.linkedin.com/in/sanjitha-a-950831398",
+    },
   },
   {
     id: "nithiga-s",
