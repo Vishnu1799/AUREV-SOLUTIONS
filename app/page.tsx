@@ -3,7 +3,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/home/Hero";
 import { PurposeCards } from "@/components/home/PurposeCards";
 import { AreasOfWork } from "@/components/home/AreasOfWork";
-import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { ApproachSection } from "@/components/home/ApproachSection";
 import { TeamPreview } from "@/components/home/TeamPreview";
 import { ContactCta } from "@/components/home/ContactCta";
@@ -16,7 +15,6 @@ export default function HomePage() {
         <Hero />
         <PurposeCards />
         <AreasOfWork />
-        <FeaturedProjects />
         <ApproachSection />
         <TeamPreview />
         <ContactCta />

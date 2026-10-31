@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/ui/SocialIcons";
 
 export function Footer() {
@@ -45,9 +45,11 @@ export function Footer() {
                 <InstagramIcon className="w-4 h-4" />
               </a>
               <a
-                href="mailto:aurevsolutions@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=aurevsolutions@gmail.com&su=Inquiry%20to%20AUREV%20SOLUTIONS"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-slate-200 hover:text-white hover:bg-[#2457D6] transition-colors"
-                aria-label="Email AUREV SOLUTIONS"
+                aria-label="Email AUREV SOLUTIONS via Gmail"
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -56,7 +58,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h3 className="font-heading text-xs font-semibold uppercase tracking-widest text-slate-400">
+            <h3 className="font-heading text-xs font-semibold uppercase tracking-widest text-[#E5A93C]">
               Navigation
             </h3>
             <ul className="space-y-2 text-sm text-slate-300">
@@ -90,13 +92,18 @@ export function Footer() {
 
           {/* Selected Work */}
           <div className="space-y-3">
-            <h3 className="font-heading text-xs font-semibold uppercase tracking-widest text-slate-400">
-              Key Projects
+            <h3 className="font-heading text-xs font-semibold uppercase tracking-widest text-[#E5A93C]">
+              Key Initiatives
             </h3>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
                 <Link href="/projects/temple-finance-tracker" className="hover:text-white transition-colors">
                   Temple Finance Tracker
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects/psna-student-feedback-portal" className="hover:text-white transition-colors">
+                  PSNA Student Feedback Portal
                 </Link>
               </li>
               <li>
@@ -114,35 +121,41 @@ export function Footer() {
                   NEOCHILL Cooling
                 </Link>
               </li>
-              <li>
-                <Link href="/projects/smart-ai-sanitation-system" className="hover:text-white transition-colors">
-                  Smart AI Sanitation
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Contact Direct */}
+          {/* Prominently Highlighted Direct Contact */}
           <div className="space-y-3">
-            <h3 className="font-heading text-xs font-semibold uppercase tracking-widest text-slate-400">
+            <h3 className="font-heading text-xs font-semibold uppercase tracking-widest text-[#E5A93C]">
               Direct Contact
             </h3>
-            <div className="space-y-2 text-sm text-slate-300">
-              <p>
-                <span className="text-slate-400 block text-xs">Direct Email</span>
+            <div className="space-y-3 text-sm text-slate-300">
+              <div>
+                <span className="text-slate-400 block text-xs">Official Email:</span>
                 <a
-                  href="mailto:aurevsolutions@gmail.com"
-                  className="text-white hover:text-[#8DA8CC] transition-colors"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=aurevsolutions@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#E5A93C] transition-colors font-mono-tech text-xs"
                 >
                   aurevsolutions@gmail.com
                 </a>
-              </p>
-              <p className="pt-2 text-xs text-slate-400">
+              </div>
+
+              <div>
+                <span className="text-slate-400 block text-xs">Official Phone:</span>
+                <a
+                  href="tel:+919600561199"
+                  className="text-[#E5A93C] hover:text-white font-heading font-bold text-base transition-colors flex items-center gap-1.5"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>+91 9600561199</span>
+                </a>
+              </div>
+
+              <div className="pt-2 text-xs text-slate-400">
                 Founder & CTO: Vishnu Prashanth S.
-              </p>
-              <p className="text-xs text-slate-400">
-                Initiative based in Tamil Nadu, India.
-              </p>
+              </div>
             </div>
           </div>
         </div>

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "Founder-led technology and innovation initiative developing practical software engineering, artificial intelligence, intelligent automation, and engineering solutions.",
   metadataBase: new URL("https://aurevsolutions.com"),
+  icons: {
+    icon: "/aurev-logo.jpg",
+  },
   openGraph: {
     title: "AUREV SOLUTIONS — Engineering Ideas Into Intelligent Solutions",
     description:
@@ -13,10 +16,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "AUREV SOLUTIONS",
-  },
-  robots: {
-    index: true,
-    follow: true,
+    images: [
+      {
+        url: "/aurev-logo.jpg",
+        width: 800,
+        height: 600,
+        alt: "AUREV SOLUTIONS Logo",
+      },
+    ],
   },
 };
 
@@ -32,12 +39,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full scroll-smooth">
+    <html lang="en" className="h-full">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
       </head>

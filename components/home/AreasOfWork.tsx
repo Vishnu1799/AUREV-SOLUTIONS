@@ -7,7 +7,7 @@ export function AreasOfWork() {
       title: "Software Engineering",
       icon: Code,
       description:
-        "Building resilient web portals, administrative ledgers, and database management systems with strict data isolation and transactional consistency.",
+        "Building resilient web portals, institutional platforms, administrative ledgers, and database management systems with strict data isolation and transactional consistency.",
       sampleProject: "Temple Finance Tracker",
       href: "/projects/temple-finance-tracker",
     },
@@ -40,19 +40,18 @@ export function AreasOfWork() {
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Heading matching reference "What We Offer" */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="space-y-3 max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0F2F5] border border-black/5">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F0F2F5] border border-black/5">
               <span className="font-mono-tech text-xs font-semibold text-[#10243A]">
-                Disciplines & Capabilities
+                Core Capabilities & Services
               </span>
             </div>
             <h2 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-[#10243A]">
-              Areas of Engineering Focus
+              Our Engineering Services
             </h2>
             <p className="text-base text-[#20252D]/75 leading-relaxed">
-              We apply technical rigor across four complementary domains, solving multifaceted problems from cloud architecture down to hardware prototypes.
+              We apply technical rigor across four complementary domains, solving multifaceted problems from cloud software down to hardware prototypes.
             </p>
           </div>
 
@@ -60,7 +59,7 @@ export function AreasOfWork() {
             href="/projects"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2457D6] hover:text-[#1A44B0] group"
           >
-            <span>View All Engineering Initiatives</span>
+            <span>Explore All Projects in Detail</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
@@ -72,13 +71,13 @@ export function AreasOfWork() {
             return (
               <div
                 key={domain.title}
-                className="p-6 rounded-3xl bg-[#FAFAF8] border border-[#10243A]/08 hover:border-[#2457D6]/30 hover:bg-white hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                className="p-6 rounded-3xl bg-[#FAFAF8] border border-[#10243A]/08 hover:border-[#2457D6]/30 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div className="space-y-4">
-                  <div className="w-10 h-10 rounded-2xl bg-white border border-[#10243A]/10 flex items-center justify-center text-[#2457D6] shadow-2xs">
-                    <Icon className="w-5 h-5" />
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-[#10243A]/10 flex items-center justify-center text-[#2457D6] shadow-2xs group-hover:bg-[#10243A] group-hover:text-white transition-colors duration-300">
+                    <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-heading text-lg font-bold text-[#10243A]">
+                  <h3 className="font-heading text-lg font-bold text-[#10243A] group-hover:text-[#2457D6] transition-colors">
                     {domain.title}
                   </h3>
                   <p className="text-sm text-[#20252D]/75 leading-relaxed">
@@ -92,10 +91,10 @@ export function AreasOfWork() {
                   </span>
                   <Link
                     href={domain.href}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#10243A] hover:text-[#2457D6] mt-0.5 group"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#10243A] hover:text-[#2457D6] mt-0.5 group/link"
                   >
                     <span>{domain.sampleProject}</span>
-                    <ArrowUpRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                    <ArrowUpRight className="w-3 h-3 transition-transform group-link-hover:translate-x-0.5" />
                   </Link>
                 </div>
               </div>

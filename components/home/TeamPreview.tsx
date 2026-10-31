@@ -10,13 +10,13 @@ export function TeamPreview() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="space-y-3 max-w-xl">
             <span className="font-mono-tech text-xs font-semibold tracking-widest uppercase text-[#2457D6]">
-              Initiative Leadership
+              Founding Leadership
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-[#10243A]">
-              The Founding Team
+              The Team Driving Innovation
             </h2>
             <p className="text-base text-[#20252D]/75 leading-relaxed">
-              Proposed internal leadership designations guiding our software engineering, creative problem-solving, and strategic product innovation.
+              Guiding our software engineering, creative problem-solving, and strategic product innovation.
             </p>
           </div>
 
@@ -24,7 +24,7 @@ export function TeamPreview() {
             href="/team"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2457D6] hover:text-[#1A44B0] group"
           >
-            <span>View Full Team Responsibilities</span>
+            <span>Learn More About Our Team</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
@@ -42,7 +42,7 @@ export function TeamPreview() {
                     {member.initials}
                   </div>
                   <span className="font-mono-tech text-[11px] text-[#8DA8CC] uppercase">
-                    Leadership
+                    Core Leader
                   </span>
                 </div>
 
@@ -50,7 +50,7 @@ export function TeamPreview() {
                 <h3 className="font-heading text-xl font-bold text-[#10243A] mb-1">
                   {member.name}
                 </h3>
-                <div className="font-mono-tech text-xs font-medium text-[#2457D6] mb-4">
+                <div className="font-mono-tech text-xs font-semibold text-[#2457D6] mb-4">
                   {member.designation}
                 </div>
 

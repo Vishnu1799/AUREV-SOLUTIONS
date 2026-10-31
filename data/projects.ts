@@ -28,13 +28,13 @@ export const projects: Project[] = [
       "Printable, auditor-ready documentation views.",
     ],
     commercialDetails: {
-      deliveredFor: "Temple administrative clients associated with Aruppukkottai and Peraiyur",
+      deliveredFor: "Temple administrative clients in Tamil Nadu",
       saleValue: "₹15,000",
-      invoiceNumber: "Invoice #2894",
+      invoiceNumber: "#2894",
       invoiceDate: "January 24, 2026",
     },
     keyTakeaway:
-      "A commercially delivered financial system providing accountability and audit compliance for administrative trust bodies.",
+      "A delivered financial software system providing accountability and audit compliance for administrative trust bodies.",
     relatedSlugs: ["customer-relationship-payment-tracking", "aurev-ai-payment-recovery"],
   },
   {
@@ -61,10 +61,10 @@ export const projects: Project[] = [
       "Payment entry recording and ledger attribution.",
       "Real-time outstanding balance calculation.",
       "Search and record retrieval across historical transactions.",
-      "Exportable and printable payment summaries (developed feature).",
+      "Exportable and printable payment summaries.",
     ],
     keyTakeaway:
-      "A fully developed business tool providing clarity on pending collections and customer transaction timelines.",
+      "A developed business tool providing clarity on pending collections and customer transaction timelines.",
     relatedSlugs: ["temple-finance-tracker", "aurev-ai-payment-recovery"],
   },
   {
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     title: "Personal Finance Manager",
     category: "Financial Technology",
     status: "Internal Review",
-    isPublic: false, // MANDATE: Internal review only. Never publish to public routes.
+    isPublic: false, // Internal review only
     tagline: "Personal budgeting and transaction categorization engine.",
     summary:
       "A personal financial management application concept designed to help individuals record income, categorize expenditures, and observe spending patterns.",
@@ -88,24 +88,20 @@ export const projects: Project[] = [
       "Transaction entry and category assignment.",
       "Monthly expense aggregation.",
     ],
-    plannedFeatures: [
-      "Predictive budget alerts.",
-      "Exportable personal tax summaries.",
-    ],
     relatedSlugs: [],
   },
   {
     id: "PRJ-04",
-    slug: "college-feedback-management-portal",
-    title: "College Feedback Management Portal",
+    slug: "psna-student-feedback-portal",
+    title: "PSNA Student Feedback & Academic Portal",
     category: "Educational Technology",
     status: "In Development",
     isPublic: true,
-    tagline: "Departmental academic feedback and assignment management architecture.",
+    tagline: "Departmental academic feedback, batch isolation, and assignment management architecture.",
     summary:
-      "An existing institutional department application undergoing architectural enhancements to improve batch isolation, assignment workflows, and database integrity.",
+      "An institutional academic platform engineered to support departmental feedback, serial test assignments, and isolated batch administration with zero cross-batch interference.",
     problem:
-      "Academic portals managing concurrent batches often encounter cross-batch record interference, duplicated test assignments, and partial database mutations during student promotion cycles.",
+      "Academic portals managing concurrent student batches often encounter cross-batch record interference, duplicated test assignments, and partial database mutations during student promotion cycles.",
     objectives: [
       "Isolate serial test assignments per student batch with zero cross-contamination.",
       "Enable reliable batch promotion and demotion with atomicity checks.",
@@ -113,29 +109,29 @@ export const projects: Project[] = [
       "Preserve historical student and departmental performance records.",
     ],
     implementedFeatures: [
-      "Existing departmental feedback intake and reporting modules.",
-      "Independent serial test assignment structure per academic batch.",
+      "Departmental feedback intake and analytics reporting.",
+      "Independent serial test assignment structure per student batch.",
       "Batch configuration validation preventing duplicate assignments.",
     ],
     plannedFeatures: [
       "Unified Promote/Demote Batch workflow with pre-execution safety confirmation.",
       "Atomic database transaction rollbacks preventing partial batch updates.",
-      "Enhanced role-based departmental authorization guards.",
+      "Role-based departmental authorization guards.",
     ],
     keyTakeaway:
-      "Engineering academic departmental infrastructure for batch isolation, data consistency, and transactional safety.",
+      "Engineering institutional infrastructure for batch isolation, data consistency, and transactional safety.",
     relatedSlugs: ["temple-finance-tracker"],
   },
   {
     id: "PRJ-05",
     slug: "nivora",
-    title: "NIVORA",
+    title: "NIVORA Grocery Platform",
     category: "E-commerce / Grocery",
     status: "Working Prototype",
     isPublic: true,
     tagline: "Customer grocery ordering platform engineered with resilient checkout flows.",
     summary:
-      "A working prototype grocery ordering digital platform developed for HACKSPRINT'26, serving as the front-facing retail interface integrated with AUREV AI payment recovery.",
+      "A working grocery ordering platform prototype engineered as the retail interface integrated with AUREV AI payment verification architecture.",
     problem:
       "Retail grocery e-commerce experiences frequently suffer dropped carts and duplicate charges when users face network fluctuations during checkout payment confirmation.",
     objectives: [
@@ -158,27 +154,19 @@ export const projects: Project[] = [
       "Express.js",
       "PostgreSQL",
       "Socket.IO",
-      "Payment Gateway Sandbox",
     ],
-    eventDetails: {
-      eventName: "HACKSPRINT'26",
-      location: "Velammal College",
-      dates: "September 30 – October 1, 2026",
-      teamMembers: ["AUREV SOLUTIONS"],
-      role: "Vishnu Prashanth S: Full Stack Developer – Agentic AI Integrated",
-    },
     keyTakeaway:
-      "A working grocery platform prototype focused on seamless purchasing and robust checkout failure handling.",
+      "A grocery platform prototype focused on seamless purchasing and robust checkout failure handling.",
     relatedSlugs: ["aurev-ai-payment-recovery"],
   },
   {
     id: "PRJ-06",
     slug: "aurev-ai-payment-recovery",
-    title: "AUREV AI: Intelligent Payment Failure Recovery",
+    title: "AUREV AI: Payment Failure Recovery System",
     category: "Agentic AI / FinTech",
     status: "Working Prototype",
     isPublic: true,
-    tagline: "Never retry a payment blindly. Verify the previous transaction before initiating another attempt.",
+    tagline: "Intelligent payment failure verification before initiating secondary attempts.",
     summary:
       "An intelligent backend verification engine designed to intercept and resolve ambiguous, interrupted, and failed digital payment transactions before users are prompted to pay again.",
     problem:
@@ -204,8 +192,6 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "React.js",
       "Socket.IO / SSE",
-      "Python AI Microservice (Prototype)",
-      "Payment Simulator Sandbox",
     ],
     keyTakeaway:
       "Foundational architectural principle: 'Never retry a payment blindly. Verify the previous transaction before initiating another payment attempt.'",
@@ -225,7 +211,7 @@ export const projects: Project[] = [
       "Current virtual assistants answer queries but lack secure autonomy to execute multi-step desktop and mobile actions without compromising user credentials or initiating unverified operations.",
     objectives: [
       "Enable voice and natural language command execution across operating systems.",
-      "Assist with sensitive operations (e.g. transfers, file organization) with strict confirmation boundaries.",
+      "Assist with sensitive operations with strict confirmation boundaries.",
       "Provide meeting audio transcription and actionable task extraction.",
       "Establish an unbreakable permission-based authorization architecture.",
     ],
@@ -238,7 +224,6 @@ export const projects: Project[] = [
       "Verification Ring: Multi-step recipient validation for financial flows.",
       "Hash Chain: Tamper-evident ledger of executed local automation tasks.",
       "Voice intent interpretation and contextual task scheduling.",
-      "Smart gallery indexing and natural-language file retrieval.",
     ],
     keyTakeaway:
       "A forward-looking agentic AI concept emphasizing zero-trust security and explicit user confirmation.",
@@ -265,21 +250,8 @@ export const projects: Project[] = [
     implementedFeatures: [
       "Thermodynamic concept engineering and dimensional schematics.",
       "Engineering CAD drawings and physical chamber structure specifications.",
-      "Physical project presentation and proof-of-concept demonstration display.",
+      "Chamber prototype demonstration display.",
     ],
-    eventDetails: {
-      eventName: "Young Innovators Kickstart 2026",
-      location: "PSNA College of Engineering and Technology, Dindigul",
-      dates: "April 17–18, 2026",
-      teamMembers: [
-        "S. Vishnu Prashanth (Founder & Project Lead)",
-        "S. Santhana Moorthy",
-        "A. Vishwa Dharan",
-        "R. Vishwa",
-        "B. Sudharsana Raja",
-      ],
-      role: "Founder & Project Lead: Vishnu Prashanth S",
-    },
     keyTakeaway:
       "Sustainable hardware engineering demonstrating passive evaporative preservation to protect micro-vendor livelihoods.",
     relatedSlugs: ["arctic-mesh", "smart-ai-sanitation-system"],
@@ -334,7 +306,7 @@ export const projects: Project[] = [
       "Ensure reliable fluid level telemetry to prevent dry-pump operation.",
     ],
     implementedFeatures: [
-      "Proposed hardware architecture and sensor circuit diagrams.",
+      "Hardware architecture and sensor circuit diagrams.",
       "ESP32 microcontroller integration schematic.",
       "Actuation logic for relay-driven pumps and misting spray nozzles.",
     ],
@@ -344,23 +316,23 @@ export const projects: Project[] = [
       "MQ-136 Gas Sensor",
       "Infrared Footfall Sensors",
       "Hydrostatic Water Level Sensors",
-      "5V/12V Relay Actuator Modules",
+      "Relay Actuator Modules",
       "Solenoid Valves & High-Pressure Mist Nozzles",
     ],
     keyTakeaway:
-      "Engineering estimate: ~₹2 lakh per public toilet unit (early reference estimate, not a deployed quote).",
+      "Engineering IoT architecture for proactive public sanitation automation.",
     relatedSlugs: ["neochill"],
   },
   {
     id: "PRJ-11",
     slug: "bharatplay",
-    title: "BHARATPLAY: Play India. Preserve Stories",
+    title: "BHARATPLAY: Traditional Gaming Platform",
     category: "Cultural Technology",
     status: "Concept",
     isPublic: true,
     tagline: "Revitalizing traditional Indian indigenous games through interactive technology.",
     summary:
-      "A cultural technology concept engineered for Smart India Hackathon 2026, aimed at preserving, documenting, and teaching indigenous Indian board and outdoor games to future generations.",
+      "A cultural technology concept aimed at preserving, documenting, and teaching indigenous Indian board and outdoor games to future generations.",
     problem:
       "Centuries of rich Indian indigenous games and cultural storytelling are disappearing as youth attention shifts exclusively to modern international digital gaming titles.",
     objectives: [
@@ -370,21 +342,14 @@ export const projects: Project[] = [
       "Design intelligent algorithmic opponents based on ancient game tactics.",
     ],
     implementedFeatures: [
-      "Competition problem statement analysis and concept documentation.",
+      "Problem statement analysis and concept documentation.",
       "Curated repository architecture of verified historical games and oral traditions.",
       "Conceptual UX design for interactive rule discovery and match playing.",
     ],
     plannedFeatures: [
-      "Interactive digital match boards for traditional games (Pachisi, Pallanguzhi, Aadu Puli Aattam).",
+      "Interactive digital match boards for traditional games.",
       "AI-powered algorithmic opponent modeling traditional play strategies.",
-      "Community story submission and vernacular voiceover repository.",
     ],
-    eventDetails: {
-      eventName: "Smart India Hackathon 2026",
-      location: "National Challenge",
-      dates: "2026",
-      role: "Problem Statement ID: 26208 — Play India. Preserve Stories.",
-    },
     keyTakeaway:
       "Cultural preservation through engineering interactive digital narratives and traditional gameplay logic.",
     relatedSlugs: ["nivora"],
@@ -393,17 +358,6 @@ export const projects: Project[] = [
 
 export function getPublicProjects(): Project[] {
   return projects.filter((p) => p.isPublic);
-}
-
-export function getFeaturedProjects(): Project[] {
-  const featuredSlugs = [
-    "temple-finance-tracker",
-    "aurev-ai-payment-recovery",
-    "nivora",
-    "neochill",
-    "smart-ai-sanitation-system",
-  ];
-  return projects.filter((p) => p.isPublic && featuredSlugs.includes(p.slug));
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {

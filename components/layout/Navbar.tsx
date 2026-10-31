@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X, Phone } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -21,13 +21,12 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
@@ -37,18 +36,18 @@ export function Navbar() {
       <div
         className={`max-w-7xl mx-auto rounded-full transition-all duration-300 ${
           isScrolled
-            ? "bg-[#FAFAF8]/90 backdrop-blur-md border border-[#10243A]/10 shadow-[0_8px_30px_rgb(16,36,58,0.06)] py-2.5 px-4 sm:px-6"
-            : "bg-white/80 backdrop-blur-sm border border-[#10243A]/05 shadow-sm py-3 px-4 sm:px-6"
+            ? "bg-[#FAFAF8]/95 backdrop-blur-md border border-[#10243A]/10 shadow-lg py-2.5 px-4 sm:px-6"
+            : "bg-white/90 backdrop-blur-sm border border-[#10243A]/08 shadow-sm py-3 px-4 sm:px-6"
         }`}
       >
         <div className="flex items-center justify-between">
-          {/* Brand Logo */}
+          {/* Brand Logo with Official Company Emblem */}
           <Logo />
 
           {/* Center Floating Pill Navigation (Desktop) */}
           <nav
             aria-label="Main Navigation"
-            className="hidden md:flex items-center gap-1 bg-[#F0F2F5] p-1 rounded-full border border-[#10243A]/05"
+            className="hidden md:flex items-center gap-1 bg-[#F0F2F5] p-1.5 rounded-full border border-[#10243A]/08"
           >
             {NAV_LINKS.map((link) => {
               const isActive =
@@ -60,10 +59,10 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 ${
+                  className={`relative px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 uppercase tracking-wider ${
                     isActive
-                      ? "bg-[#10243A] text-white shadow-sm"
-                      : "text-[#20252D]/80 hover:text-[#10243A] hover:bg-black/[0.03]"
+                      ? "bg-[#10243A] text-white shadow-xs"
+                      : "text-[#20252D]/80 hover:text-[#10243A] hover:bg-black/[0.04]"
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -73,13 +72,21 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Right Action Button (Desktop) */}
+          {/* Right Action Group: Hotline & Send Proposal CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <a
+              href="tel:+919600561199"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-extrabold text-[#10243A] hover:text-[#2457D6] transition-colors"
+            >
+              <Phone className="w-3.5 h-3.5 text-[#E5A93C]" />
+              <span>+91 9600561199</span>
+            </a>
+
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-[#2457D6] hover:bg-[#1A44B0] rounded-full transition-all duration-200 shadow-sm hover:shadow"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider text-white bg-[#2457D6] hover:bg-[#1A44B0] rounded-full transition-all duration-200 shadow-sm hover:shadow-md"
             >
-              <span>Contact Us</span>
+              <span>Send Proposal</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -92,14 +99,14 @@ export function Navbar() {
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-4 top-20 bg-white border border-[#10243A]/10 rounded-3xl p-5 shadow-2xl z-50 animate-in fade-in slide-in-from-top-3 duration-200">
+        <div className="md:hidden fixed inset-x-4 top-20 bg-white border border-[#10243A]/10 rounded-3xl p-6 shadow-2xl z-50 animate-in fade-in slide-in-from-top-3 duration-200 space-y-4">
           <nav className="flex flex-col gap-2">
             {NAV_LINKS.map((link) => {
               const isActive =
@@ -111,7 +118,7 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-4 py-2.5 rounded-2xl text-base font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-2xl text-base font-bold transition-colors ${
                     isActive
                       ? "bg-[#10243A] text-white"
                       : "text-[#20252D] hover:bg-[#F0F2F5]"
@@ -122,16 +129,25 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <div className="pt-3 border-t border-slate-100 mt-1">
-              <Link
-                href="/contact"
-                className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-white bg-[#2457D6] rounded-2xl"
-              >
-                <span>Initiate Contact</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            </div>
           </nav>
+
+          <div className="pt-4 border-t border-slate-100 space-y-3">
+            <a
+              href="tel:+919600561199"
+              className="flex items-center justify-center gap-2 w-full py-3 text-sm font-black text-[#10243A] bg-[#F0F2F5] rounded-2xl"
+            >
+              <Phone className="w-4 h-4 text-[#D97706]" />
+              <span>Call +91 9600561199</span>
+            </a>
+
+            <Link
+              href="/contact"
+              className="flex items-center justify-center gap-2 w-full py-3.5 text-sm font-extrabold text-white bg-[#2457D6] rounded-2xl shadow-md"
+            >
+              <span>Send Proposal</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       )}
     </header>
