@@ -16,16 +16,16 @@ export function Logo({ className = "", isDark = false }: LogoProps) {
       <div
         className={`relative transition-transform duration-300 group-hover:scale-105 ${
           isDark
-            ? "bg-white px-3.5 py-1.5 rounded-2xl shadow-sm border border-white/20 inline-flex items-center"
-            : "inline-flex items-center"
+            ? "bg-white px-4 py-2 rounded-2xl shadow-sm border border-white/20 inline-flex items-center"
+            : "inline-flex items-center py-1"
         }`}
       >
         <Image
           src="/aurev-logo.jpg"
           alt="AUREV SOLUTIONS"
-          width={260}
-          height={70}
-          className={`h-11 sm:h-13 md:h-14 w-auto object-contain transition-all ${
+          width={320}
+          height={90}
+          className={`h-12 sm:h-14 md:h-16 w-auto object-contain transition-all ${
             !isDark ? "mix-blend-multiply" : ""
           }`}
           priority

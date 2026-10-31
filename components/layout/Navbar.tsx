@@ -92,22 +92,27 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile Menu Button with Word Label */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-full text-[#10243A] hover:bg-black/5 transition-colors"
+            className="md:hidden inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#10243A]/15 bg-[#F0F2F5] text-[#10243A] hover:bg-black/5 active:scale-95 transition-all text-xs font-bold uppercase tracking-wider shadow-2xs"
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <span>{mobileMenuOpen ? "Close" : "Menu"}</span>
+            {mobileMenuOpen ? (
+              <X className="w-4 h-4 text-[#2457D6]" />
+            ) : (
+              <Menu className="w-4 h-4 text-[#10243A]" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-4 top-20 bg-white border border-[#10243A]/10 rounded-3xl p-6 shadow-2xl z-50 animate-in fade-in slide-in-from-top-3 duration-200 space-y-4">
+        <div className="md:hidden fixed inset-x-4 top-[84px] bg-white border border-[#10243A]/10 rounded-3xl p-6 shadow-2xl z-50 animate-in fade-in slide-in-from-top-3 duration-200 space-y-4">
           <nav className="flex flex-col gap-2">
             {NAV_LINKS.map((link) => {
               const isActive =
