@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "AUREV SOLUTIONS — Engineering Ideas Into Intelligent Solutions",
   description:
-    "Founder-led technology and innovation initiative developing practical software engineering, artificial intelligence, intelligent automation, and engineering solutions.",
+    "Technology and innovation initiative developing practical software engineering, artificial intelligence, intelligent automation, and engineering solutions.",
   metadataBase: new URL("https://aurevsolutions.com"),
   icons: {
     icon: "/aurev-logo.jpg",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AUREV SOLUTIONS — Engineering Ideas Into Intelligent Solutions",
     description:
-      "Founder-led technology and innovation initiative exploring practical solutions through software, AI, and engineering.",
+      "Technology and innovation initiative exploring practical solutions through software, AI, and engineering.",
     type: "website",
     locale: "en_US",
     siteName: "AUREV SOLUTIONS",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/aurev-logo.jpg",
         width: 800,
         height: 600,
-        alt: "AUREV SOLUTIONS Logo",
+        alt: "AUREV SOLUTIONS",
       },
     ],
   },
@@ -41,6 +41,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+              }
+              window.scrollTo(0, 0);
+            `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

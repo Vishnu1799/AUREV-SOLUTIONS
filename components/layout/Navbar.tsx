@@ -32,12 +32,12 @@ export function Navbar() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 w-full pt-3 px-4 sm:px-6 lg:px-8 transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full pt-3 px-3 sm:px-6 lg:px-8 transition-all duration-300">
       <div
         className={`max-w-7xl mx-auto rounded-full transition-all duration-300 ${
           isScrolled
-            ? "bg-[#FAFAF8]/95 backdrop-blur-md border border-[#10243A]/10 shadow-lg py-2.5 px-4 sm:px-6"
-            : "bg-white/90 backdrop-blur-sm border border-[#10243A]/08 shadow-sm py-3 px-4 sm:px-6"
+            ? "bg-[#FAFAF8]/95 backdrop-blur-md border border-[#10243A]/10 shadow-lg py-2 px-4 sm:px-6"
+            : "bg-white/90 backdrop-blur-sm border border-[#10243A]/08 shadow-sm py-2.5 px-4 sm:px-6"
         }`}
       >
         <div className="flex items-center justify-between">
@@ -77,6 +77,7 @@ export function Navbar() {
             <a
               href="tel:+919600561199"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-extrabold text-[#10243A] hover:text-[#2457D6] transition-colors"
+              aria-label="Call +91 9600561199"
             >
               <Phone className="w-3.5 h-3.5 text-[#E5A93C]" />
               <span>+91 9600561199</span>

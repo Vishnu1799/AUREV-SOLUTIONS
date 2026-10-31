@@ -25,7 +25,7 @@ export function ContactCta() {
                 href="/contact"
                 className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#2457D6] hover:bg-[#1A44B0] text-white text-sm font-semibold transition-all shadow-md group"
               >
-                <span>Send Proposal With Project Details</span>
+                <span>Send Proposal</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
 
@@ -36,7 +36,7 @@ export function ContactCta() {
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-sm font-semibold transition-all"
               >
                 <Mail className="w-4 h-4 text-[#E5A93C]" />
-                <span>Open in Gmail</span>
+                <span>Mail Us</span>
               </a>
 
               <a
@@ -44,7 +44,7 @@ export function ContactCta() {
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-[#E5A93C] hover:bg-[#D97706] text-[#10243A] text-sm font-bold transition-all shadow-md"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call +91 9600561199</span>
+                <span>Contact +91 9600561199</span>
               </a>
             </div>
           </div>

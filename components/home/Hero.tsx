@@ -1,31 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Sparkles, Layers, ShieldCheck, Mail, Phone } from "lucide-react";
+import { ArrowRight, Sparkles, Phone, Mail, CheckCircle2, ShieldCheck, Cpu } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-blueprint-grid">
+    <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-blueprint-grid">
       {/* Ambient background energy glows */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-amber-200/30 via-blue-200/25 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-10 w-[500px] h-[350px] bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-amber-200/25 via-blue-200/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
           {/* Left Column: Bold Headline & Vision */}
           <div className="lg:col-span-7 space-y-7 text-left">
-            {/* Architectural Status Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#10243A]/10 shadow-xs">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#E5A93C] ring-4 ring-amber-100 animate-pulse" />
-              <span className="font-mono-tech text-xs font-bold tracking-wider text-[#10243A] uppercase">
-                Technology & Applied Innovation
-              </span>
-            </div>
-
             {/* Main Architectural Headline */}
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#10243A] leading-[1.06]">
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#10243A] leading-[1.08]">
               ENGINEERING IDEAS INTO{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2457D6] via-[#1A44B0] to-[#E5A93C] inline-block">
                 INTELLIGENT
@@ -44,7 +34,7 @@ export function Hero() {
                 href="/projects"
                 className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#10243A] hover:bg-[#2457D6] text-white text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-xl group"
               >
-                <span>Explore Our Portfolio</span>
+                <span>Explore Our Work</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
 
@@ -57,100 +47,129 @@ export function Hero() {
               </Link>
             </div>
 
-            {/* Creative & Professional Technical Metrics */}
-            <div className="pt-6 border-t border-[#10243A]/10 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-xl">
-              <div className="space-y-1">
-                <span className="block font-heading text-2xl font-black text-[#10243A]">Applied Rigor</span>
-                <span className="text-xs text-[#20252D]/70 block leading-snug">Purpose-built software & automation architecture</span>
-              </div>
-              <div className="space-y-1">
-                <span className="block font-heading text-2xl font-black text-[#2457D6]">Real Utility</span>
-                <span className="text-xs text-[#20252D]/70 block leading-snug">Engineered to eliminate actual operational friction</span>
-              </div>
-              <div className="space-y-1">
-                <span className="block font-heading text-2xl font-black text-[#D97706]">Founder-Led</span>
-                <span className="text-xs text-[#20252D]/70 block leading-snug">Hands-on systems architecture & execution</span>
-              </div>
-            </div>
-
-            {/* Prominently Highlighted Direct Contact Bar */}
-            <div className="p-4 rounded-2xl bg-white/90 border-2 border-[#2457D6]/20 shadow-sm flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#2457D6] text-white flex items-center justify-center shadow-xs">
+            {/* Separate Contact & Mail Us Cards (Side-by-side, perfectly mobile responsive) */}
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-xl">
+              {/* Card 1: Contact (Phone) -> Direct Call Trigger */}
+              <a
+                href="tel:+919600561199"
+                className="flex-1 flex items-center gap-3.5 p-4 rounded-2xl bg-white border border-[#10243A]/10 hover:border-[#2457D6]/40 hover:shadow-md transition-all group"
+                aria-label="Call +91 9600561199"
+              >
+                <div className="w-11 h-11 rounded-xl bg-[#E5A93C]/15 text-[#D97706] flex items-center justify-center flex-shrink-0 group-hover:bg-[#2457D6] group-hover:text-white transition-colors">
                   <Phone className="w-5 h-5" />
                 </div>
-                <div>
-                  <span className="text-[10px] font-mono-tech uppercase font-bold text-[#8DA8CC] tracking-wider block">
-                    Direct Official Hotline
+                <div className="min-w-0">
+                  <span className="font-mono-tech text-[10px] font-bold uppercase tracking-wider text-[#8DA8CC] block">
+                    Contact
                   </span>
-                  <a
-                    href="tel:+919600561199"
-                    className="font-heading text-base font-extrabold text-[#10243A] hover:text-[#2457D6] transition-colors"
-                  >
+                  <span className="font-heading text-sm sm:text-base font-extrabold text-[#10243A] group-hover:text-[#2457D6] transition-colors truncate block">
                     +91 9600561199
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
 
+              {/* Card 2: Mail Us (Gmail) -> Direct Gmail Web Trigger */}
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=aurevsolutions@gmail.com&su=Project%20Inquiry%20-%20AUREV%20SOLUTIONS"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F0F2F5] hover:bg-[#2457D6] text-[#10243A] hover:text-white text-xs font-semibold transition-colors"
+                className="flex-1 flex items-center gap-3.5 p-4 rounded-2xl bg-white border border-[#10243A]/10 hover:border-[#2457D6]/40 hover:shadow-md transition-all group"
+                aria-label="Email aurevsolutions@gmail.com"
               >
-                <Mail className="w-3.5 h-3.5" />
-                <span>Open in Gmail</span>
+                <div className="w-11 h-11 rounded-xl bg-[#2457D6]/10 text-[#2457D6] flex items-center justify-center flex-shrink-0 group-hover:bg-[#2457D6] group-hover:text-white transition-colors">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div className="min-w-0">
+                  <span className="font-mono-tech text-[10px] font-bold uppercase tracking-wider text-[#8DA8CC] block">
+                    Mail Us
+                  </span>
+                  <span className="font-heading text-sm sm:text-base font-extrabold text-[#10243A] group-hover:text-[#2457D6] transition-colors truncate block">
+                    aurevsolutions@gmail.com
+                  </span>
+                </div>
               </a>
             </div>
           </div>
 
-          {/* Right Column: Editorial Founder Showcase (Dignified & Prominent) */}
+          {/* Right Column: Architectural Engineering Composition (Maximalist, Tactile, No Person Image) */}
           <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-sm sm:max-w-md group">
-              {/* Gold & Blue Architectural Glow Behind Portrait */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-[#E5A93C] via-[#2457D6] to-[#10243A] rounded-3xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-500 -z-10" />
-
-              {/* Founder Editorial Portrait Card */}
-              <div className="relative rounded-3xl overflow-hidden bg-[#10243A] border-2 border-white/20 shadow-2xl">
-                <div className="relative aspect-[3/4] w-full overflow-hidden">
-                  <Image
-                    src="/vishnu-prashanth.jpg"
-                    alt="Vishnu Prashanth S — Founder & Chief Technology Officer, AUREV SOLUTIONS"
-                    fill
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    priority
-                  />
-                  {/* Subtle gradient vignette at bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#10243A] via-[#10243A]/20 to-transparent" />
-                </div>
-
-                {/* Editorial Label Overlay */}
-                <div className="absolute bottom-0 inset-x-0 p-6 text-white space-y-1.5 backdrop-blur-xs bg-[#10243A]/60 border-t border-white/10">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono-tech text-[10px] font-bold uppercase tracking-widest text-[#E5A93C]">
-                      Founder & CTO
-                    </span>
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="relative mx-auto max-w-md space-y-5">
+              
+              {/* Primary Tactile Card: Engineering Capabilities */}
+              <div className="tactile-card rounded-3xl p-7 bg-white border-2 border-[#10243A]/08 shadow-xl space-y-6">
+                
+                {/* Header Badge */}
+                <div className="flex items-center justify-between pb-4 border-b border-black/5">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-[#10243A] text-white flex items-center justify-center">
+                      <Cpu className="w-4 h-4 text-[#E5A93C]" />
+                    </div>
+                    <div>
+                      <span className="font-heading text-xs font-bold text-[#10243A] block">
+                        Core Systems
+                      </span>
+                      <span className="font-mono-tech text-[10px] text-[#8DA8CC]">
+                        Applied Technology
+                      </span>
+                    </div>
                   </div>
-                  <h2 className="font-heading text-2xl font-black text-white tracking-wide">
-                    Vishnu Prashanth S.
-                  </h2>
-                  <p className="text-xs text-slate-300 leading-snug">
-                    Directing technical architecture, software engineering, and applied innovation at AUREV SOLUTIONS.
-                  </p>
+                  <span className="inline-flex items-center gap-1 font-mono-tech text-[10px] text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Active Pipeline
+                  </span>
+                </div>
+
+                {/* Engineering Highlights */}
+                <div className="space-y-3.5">
+                  <div className="p-3.5 rounded-2xl bg-[#FAFAF8] border border-black/5 flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#2457D6] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-heading text-xs font-bold text-[#10243A] block">
+                        Institutional & Departmental Software
+                      </span>
+                      <p className="text-[11px] text-[#20252D]/75 leading-relaxed">
+                        Data consistency, batch isolation, and administrative ledgers.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-[#FAFAF8] border border-black/5 flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#2457D6] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-heading text-xs font-bold text-[#10243A] block">
+                        Intelligent AI Systems & Automation
+                      </span>
+                      <p className="text-[11px] text-[#20252D]/75 leading-relaxed">
+                        Transaction verification engines, agentic workflows, and safe state machines.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-[#FAFAF8] border border-black/5 flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#2457D6] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-heading text-xs font-bold text-[#10243A] block">
+                        Hardware Engineering & IoT
+                      </span>
+                      <p className="text-[11px] text-[#20252D]/75 leading-relaxed">
+                        Microcontroller sensor telemetry and sustainable produce cooling chambers.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Action */}
+                <div className="pt-2">
+                  <Link
+                    href="/contact"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-[#2457D6] hover:bg-[#1A44B0] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+                  >
+                    <span>Initiate Project Consultation</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
 
-              {/* Floating Tech Badge (Maximalism Touch) */}
-              <div className="absolute -bottom-4 -left-4 bg-white border border-[#10243A]/10 rounded-2xl p-3 shadow-xl flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-[#D97706] flex items-center justify-center">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="font-heading text-xs font-bold text-[#10243A] block">AUREV Core</span>
-                  <span className="font-mono-tech text-[10px] text-[#8DA8CC]">Engineering Directorate</span>
-                </div>
-              </div>
             </div>
           </div>
 

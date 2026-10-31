@@ -17,11 +17,11 @@ export default function TeamPage() {
         <section className="pt-12 pb-12 sm:pt-16 sm:pb-16 bg-blueprint-grid border-b border-[#10243A]/05">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#10243A]/10 text-xs font-mono-tech font-bold text-[#10243A]">
-              <span>Executive Leadership</span>
+              <span>Leadership & Engineering</span>
             </div>
 
             <h1 className="font-heading text-4xl sm:text-5xl font-extrabold tracking-tight text-[#10243A]">
-              Leadership & Innovation Team
+              Founding Team
             </h1>
 
             <p className="text-base sm:text-lg text-[#20252D]/80 max-w-3xl leading-relaxed">
@@ -34,24 +34,25 @@ export default function TeamPage() {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             
-            {/* Vishnu Prashanth S: Prominent Editorial Showcase */}
-            <div className="tactile-card rounded-3xl p-8 sm:p-10 lg:p-12 overflow-hidden bg-white border-2 border-[#10243A]/10 shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                {/* Large Editorial Portrait */}
-                <div className="lg:col-span-5 relative">
-                  <div className="relative mx-auto aspect-[3/4] max-w-md w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-[#10243A]/10 bg-[#10243A]">
+            {/* Vishnu Prashanth S: Clean, Elegantly Sized Portrait Card */}
+            <div className="tactile-card rounded-3xl p-8 sm:p-10 lg:p-12 overflow-hidden bg-white border-2 border-[#10243A]/10 shadow-xl max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+                
+                {/* Tastefully Sized Portrait (max-w-xs, perfectly proportioned, no awkwardness) */}
+                <div className="md:col-span-5 flex justify-center">
+                  <div className="relative aspect-[3/4] w-full max-w-[280px] sm:max-w-[320px] rounded-2xl overflow-hidden shadow-xl border border-[#10243A]/10 bg-black">
                     <Image
                       src="/vishnu-prashanth.jpg"
                       alt="Vishnu Prashanth S — Founder & Chief Technology Officer"
                       fill
-                      className="object-cover object-center"
+                      className="object-cover object-top"
                       priority
                     />
                   </div>
                 </div>
 
                 {/* Founder Details */}
-                <div className="lg:col-span-7 space-y-6">
+                <div className="md:col-span-7 space-y-5 text-left">
                   <div>
                     <span className="font-mono-tech text-xs font-bold uppercase tracking-widest text-[#E5A93C]">
                       Founder & Chief Technology Officer
@@ -64,13 +65,13 @@ export default function TeamPage() {
                     </p>
                   </div>
 
-                  <div className="space-y-3 pt-2">
+                  <div className="space-y-3 pt-1">
                     <span className="font-mono-tech text-xs font-bold text-[#10243A] uppercase tracking-wide">
                       Core Responsibilities & Technical Direction
                     </span>
-                    <ul className="space-y-2.5">
+                    <ul className="space-y-2">
                       {vishnu.responsibilities.map((resp, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-sm text-[#20252D]/85 leading-relaxed">
+                        <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#20252D]/85 leading-relaxed">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#2457D6] mt-2 flex-shrink-0" />
                           <span>{resp}</span>
                         </li>
@@ -79,8 +80,8 @@ export default function TeamPage() {
                   </div>
 
                   {/* Connect Links */}
-                  <div className="pt-6 border-t border-[#10243A]/08 flex items-center gap-3">
-                    <span className="text-xs font-bold text-[#10243A]">Direct Connect:</span>
+                  <div className="pt-4 border-t border-[#10243A]/08 flex items-center gap-3">
+                    <span className="text-xs font-bold text-[#10243A]">Connect:</span>
                     {vishnu.links.github && (
                       <a
                         href={vishnu.links.github}
@@ -120,15 +121,15 @@ export default function TeamPage() {
             </div>
 
             {/* Other Leadership Team Members */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {otherMembers.map((member) => (
                 <div
                   key={member.id}
                   className="tactile-card rounded-3xl p-8 flex flex-col justify-between"
                 >
-                  <div className="space-y-6">
+                  <div className="space-y-5">
                     <div className="flex items-center justify-between">
-                      <div className="w-16 h-16 rounded-2xl bg-[#10243A] text-white flex items-center justify-center font-heading text-xl font-extrabold shadow-sm">
+                      <div className="w-14 h-14 rounded-2xl bg-[#10243A] text-white flex items-center justify-center font-heading text-lg font-extrabold shadow-sm">
                         {member.initials}
                       </div>
                       <span className="font-mono-tech text-xs text-[#8DA8CC] uppercase font-bold">
@@ -148,7 +149,7 @@ export default function TeamPage() {
                       </p>
                     </div>
 
-                    <div className="space-y-2.5 pt-2">
+                    <div className="space-y-2 pt-1">
                       <span className="font-mono-tech text-xs font-bold text-[#10243A] uppercase tracking-wide">
                         Assigned Responsibilities
                       </span>

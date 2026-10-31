@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/ui/SocialIcons";
-import { Mail, Send, CheckCircle2, Phone, MessageSquare, Sparkles } from "lucide-react";
+import { Mail, Send, CheckCircle2, Phone, MessageSquare } from "lucide-react";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -19,7 +19,7 @@ export default function ContactPage() {
     e.preventDefault();
     if (!name || !email || !phone || !message) return;
 
-    // Construct direct Gmail Web URL so it opens directly in Gmail, never Outlook
+    // Construct direct Gmail Web URL
     const emailSubject = encodeURIComponent(
       `[Project Proposal] ${subject || "New Collaboration Inquiry"}`
     );
@@ -31,10 +31,7 @@ export default function ContactPage() {
 
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aurevsolutions@gmail.com&su=${emailSubject}&body=${emailBody}`;
 
-    // Show immediate on-screen confirmation notification
     setIsSubmitted(true);
-
-    // Launch Gmail in new tab
     window.open(gmailUrl, "_blank");
   };
 
@@ -52,76 +49,79 @@ export default function ContactPage() {
         {/* Hero */}
         <section className="pt-12 pb-12 sm:pt-16 sm:pb-16 bg-blueprint-grid border-b border-[#10243A]/05">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E5A93C]/10 border border-[#E5A93C]/30 text-xs font-mono-tech font-bold text-[#D97706]">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Project Proposals & Direct Inquiries</span>
-            </div>
-
             <h1 className="font-heading text-4xl sm:text-5xl font-extrabold tracking-tight text-[#10243A]">
               Connect & Collaborate With Us
             </h1>
 
             <p className="text-base sm:text-lg text-[#20252D]/80 max-w-3xl leading-relaxed">
-              Have an operational challenge, software project, or innovative technical concept? Send your proposal directly to our engineering leadership team.
+              Have an operational challenge, software project, or innovative technical concept? Send your proposal directly to our team.
             </p>
           </div>
         </section>
 
-        {/* High-Impact Company Number & Quick Connect Banner */}
-        <section className="py-6 bg-[#10243A] text-white">
+        {/* Separate Contact & Mail Us Cards */}
+        <section className="py-8 bg-white border-b border-[#10243A]/08">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-3xl bg-gradient-to-r from-[#10243A] via-[#1A44B0] to-[#10243A] border-2 border-[#E5A93C]/40 shadow-xl">
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#E5A93C] text-[#10243A] flex items-center justify-center font-black shadow-lg">
-                  <Phone className="w-7 h-7" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl">
+              
+              {/* Card 1: Contact (Phone) -> Direct Call Trigger */}
+              <a
+                href="tel:+919600561199"
+                className="flex items-center gap-4 p-5 rounded-3xl bg-[#FAFAF8] border-2 border-[#10243A]/10 hover:border-[#2457D6] hover:shadow-lg transition-all group"
+                aria-label="Call +91 9600561199"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-[#E5A93C] text-[#10243A] flex items-center justify-center font-black shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
+                  <Phone className="w-6 h-6" />
                 </div>
-                <div>
-                  <span className="font-mono-tech text-xs uppercase tracking-widest text-slate-300 block font-bold">
-                    Official Company Hotline:
+                <div className="min-w-0">
+                  <span className="font-mono-tech text-xs uppercase tracking-widest text-[#8DA8CC] block font-bold">
+                    Contact
                   </span>
-                  <a
-                    href="tel:+919600561199"
-                    className="font-heading text-2xl sm:text-3xl font-black text-white hover:text-[#E5A93C] transition-colors tracking-wide"
-                  >
+                  <span className="font-heading text-xl sm:text-2xl font-black text-[#10243A] group-hover:text-[#2457D6] transition-colors truncate block">
                     +91 9600561199
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-3">
-                <a
-                  href="tel:+919600561199"
-                  className="px-6 py-3 rounded-full bg-[#E5A93C] hover:bg-[#D97706] text-[#10243A] font-extrabold text-sm transition-all shadow-md"
-                >
-                  Call Now
-                </a>
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=aurevsolutions@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-full bg-white/15 hover:bg-white/25 text-white font-bold text-sm transition-all border border-white/20"
-                >
-                  Open in Gmail
-                </a>
-              </div>
+              {/* Card 2: Mail Us (Gmail) -> Direct Gmail Web Trigger */}
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=aurevsolutions@gmail.com&su=Project%20Proposal%20-%20AUREV%20SOLUTIONS"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-5 rounded-3xl bg-[#FAFAF8] border-2 border-[#10243A]/10 hover:border-[#2457D6] hover:shadow-lg transition-all group"
+                aria-label="Email aurevsolutions@gmail.com"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-[#2457D6] text-white flex items-center justify-center font-black shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <div className="min-w-0">
+                  <span className="font-mono-tech text-xs uppercase tracking-widest text-[#8DA8CC] block font-bold">
+                    Mail Us
+                  </span>
+                  <span className="font-heading text-base sm:text-lg font-black text-[#10243A] group-hover:text-[#2457D6] transition-colors truncate block">
+                    aurevsolutions@gmail.com
+                  </span>
+                </div>
+              </a>
+
             </div>
           </div>
         </section>
 
-        {/* Proposal Form and Direct Channels Grid */}
+        {/* Proposal Form Section */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               
               {/* Left Column: Proposal Form */}
-              <div className="lg:col-span-7">
+              <div className="lg:col-span-8">
                 <div className="tactile-card rounded-3xl p-8 sm:p-10 space-y-6 border-2 border-[#10243A]/08 shadow-xl">
                   <div>
                     <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#10243A]">
                       Send a Project Proposal
                     </h2>
                     <p className="text-xs sm:text-sm text-[#20252D]/75 mt-1 leading-relaxed">
-                      All fields marked with an asterisk (<span className="text-rose-500 font-bold">*</span>) are mandatory. When you click &ldquo;Send Proposal&rdquo;, your inquiry will be prepared and routed straight to our team&apos;s verified inbox (<strong className="text-[#10243A]">aurevsolutions@gmail.com</strong>).
+                      All fields marked with an asterisk (<span className="text-rose-500 font-bold">*</span>) are mandatory.
                     </p>
                   </div>
 
@@ -132,7 +132,7 @@ export default function ContactPage() {
                       <div className="text-xs sm:text-sm space-y-1">
                         <strong className="block font-bold">Proposal Prepared & Gmail Launched!</strong>
                         <p>
-                          Your proposal details have been formatted and dispatched to <strong>aurevsolutions@gmail.com</strong>. Founder Vishnu Prashanth S and our engineering team will review it and follow up promptly.
+                          Your proposal details have been formatted and dispatched to <strong>aurevsolutions@gmail.com</strong>.
                         </p>
                       </div>
                     </div>
@@ -249,63 +249,31 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Right Column: Information for Team Communication */}
-              <div className="lg:col-span-5 space-y-6">
+              {/* Right Column: Copy Email & Social Channels */}
+              <div className="lg:col-span-4 space-y-6">
                 
-                {/* Official Email Dispatch Info */}
-                <div className="tactile-card rounded-3xl p-6 sm:p-8 space-y-4 bg-white border border-[#10243A]/08 shadow-md">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-[#2457D6] text-white flex items-center justify-center shadow-xs">
-                      <Mail className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <span className="font-heading text-base font-extrabold text-[#10243A]">
-                        Official Email Inbox
-                      </span>
-                      <div className="font-mono-tech text-xs text-[#8DA8CC]">
-                        Monitored by Leadership Team
-                      </div>
-                    </div>
-                  </div>
-
-                  <p className="text-sm font-mono-tech font-bold text-[#10243A] select-all bg-[#FAFAF8] p-3.5 rounded-2xl border border-black/5">
+                {/* Copy Email Box */}
+                <div className="tactile-card rounded-3xl p-6 space-y-3 bg-white border border-[#10243A]/08 shadow-sm">
+                  <span className="font-heading text-sm font-extrabold text-[#10243A] block">
+                    Copy Email Address
+                  </span>
+                  <p className="text-xs font-mono-tech font-bold text-[#10243A] select-all bg-[#FAFAF8] p-3 rounded-2xl border border-black/5">
                     aurevsolutions@gmail.com
                   </p>
-
-                  <div className="flex items-center gap-3">
-                    <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=aurevsolutions@gmail.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 py-2.5 text-center text-xs font-bold rounded-full bg-[#10243A] text-white hover:bg-[#2457D6] transition-colors"
-                    >
-                      Direct Gmail Compose
-                    </a>
-                    <button
-                      type="button"
-                      onClick={copyEmail}
-                      className="px-5 py-2.5 text-xs font-mono-tech font-bold rounded-full border border-black/15 hover:bg-[#F0F2F5] transition-colors"
-                    >
-                      {isCopied ? "Copied!" : "Copy"}
-                    </button>
-                  </div>
-                </div>
-
-                {/* Where Does the Team See It? Explanation Box */}
-                <div className="tactile-card rounded-3xl p-6 space-y-3 bg-[#FAFAF8] border border-black/5">
-                  <span className="font-heading text-sm font-extrabold text-[#10243A] block">
-                    How Proposals Are Handled
-                  </span>
-                  <p className="text-xs text-[#20252D]/80 leading-relaxed">
-                    When you click <strong>&ldquo;Send Proposal&rdquo;</strong>, your detailed project brief is delivered directly to our centralized executive inbox (<strong>aurevsolutions@gmail.com</strong>). Founder & CTO Vishnu Prashanth S and our senior innovation leads review every submission within 24–48 hours.
-                  </p>
+                  <button
+                    type="button"
+                    onClick={copyEmail}
+                    className="w-full py-2.5 text-xs font-mono-tech font-bold rounded-full border border-black/15 hover:bg-[#F0F2F5] transition-colors"
+                  >
+                    {isCopied ? "Copied to Clipboard!" : "Copy Address"}
+                  </button>
                 </div>
 
                 {/* Social Channels */}
                 <div className="tactile-card rounded-3xl p-6 space-y-4 bg-white border border-black/5">
                   <div className="flex items-center gap-2 text-sm font-heading font-extrabold text-[#10243A]">
                     <MessageSquare className="w-4 h-4 text-[#2457D6]" />
-                    <span>Founder Social & Code Repositories</span>
+                    <span>Social Channels</span>
                   </div>
 
                   <div className="space-y-2 text-sm">
@@ -361,4 +329,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
