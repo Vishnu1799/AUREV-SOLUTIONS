@@ -13,37 +13,29 @@ export default function TeamPage() {
       <Navbar />
 
       <main className="flex-1">
-        {/* Hero Banner */}
-        <section className="pt-12 pb-12 sm:pt-16 sm:pb-16 bg-blueprint-grid border-b border-[#10243A]/05">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#10243A]/10 text-xs font-mono-tech font-bold text-[#10243A]">
-              <span>Leadership & Engineering</span>
-            </div>
-
+        {/* Simple Header with OUR TEAM text alone */}
+        <section className="pt-16 pb-12 sm:pt-20 sm:pb-16 bg-blueprint-grid border-b border-[#10243A]/05">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
             <h1 className="font-heading text-4xl sm:text-5xl font-extrabold tracking-tight text-[#10243A]">
-              Founding Team
+              OUR TEAM
             </h1>
-
-            <p className="text-base sm:text-lg text-[#20252D]/80 max-w-3xl leading-relaxed">
-              Guiding technical architecture, software engineering, and strategic product innovation across AUREV SOLUTIONS.
-            </p>
           </div>
         </section>
 
         {/* Featured Founder & Leadership Showcase */}
         <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             
             {/* Vishnu Prashanth S: Clean, Elegantly Sized Portrait Card */}
-            <div className="tactile-card rounded-3xl p-8 sm:p-10 lg:p-12 overflow-hidden bg-white border-2 border-[#10243A]/10 shadow-xl max-w-5xl mx-auto">
+            <div className="tactile-card rounded-3xl p-8 sm:p-10 lg:p-12 overflow-hidden bg-white border-2 border-[#10243A]/10 shadow-xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
-                {/* Tastefully Sized Portrait (max-w-xs, perfectly proportioned, no awkwardness) */}
+                {/* Tastefully Sized Portrait */}
                 <div className="md:col-span-5 flex justify-center">
                   <div className="relative aspect-[3/4] w-full max-w-[280px] sm:max-w-[320px] rounded-2xl overflow-hidden shadow-xl border border-[#10243A]/10 bg-black">
                     <Image
                       src="/vishnu-prashanth.jpg"
-                      alt="Vishnu Prashanth S — Founder & Chief Technology Officer"
+                      alt="Vishnu Prashanth S"
                       fill
                       className="object-cover object-top"
                       priority
@@ -67,7 +59,7 @@ export default function TeamPage() {
 
                   <div className="space-y-3 pt-1">
                     <span className="font-mono-tech text-xs font-bold text-[#10243A] uppercase tracking-wide">
-                      Core Responsibilities & Technical Direction
+                      Core Responsibilities
                     </span>
                     <ul className="space-y-2">
                       {vishnu.responsibilities.map((resp, i) => (
@@ -121,7 +113,7 @@ export default function TeamPage() {
             </div>
 
             {/* Other Leadership Team Members */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto">
               {otherMembers.map((member) => (
                 <div
                   key={member.id}
